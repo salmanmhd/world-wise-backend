@@ -28,7 +28,7 @@ app.get('/:id', async (req, res) => {
     const city = await cities.findOne({ _id: id });
     if (city) {
       res.status(200).json({
-        msg: 'city fetched successfully',
+        msg: 'city fetched successfully.',
         data: city,
       });
     }
