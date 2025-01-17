@@ -7,9 +7,9 @@ mongoose.connect(MONGODB_URI);
 
 const positionSchema = new Schema({
   lat: { type: Number, required: true },
-  long: { type: Number, required: true },
+  lng: { type: Number, required: true },
 });
-const citySchema = new Schema({
+const citiesSchema = new Schema({
   cityName: { type: String, required: true },
   country: { type: String, required: true },
   emoji: { type: String, required: true },
@@ -17,9 +17,6 @@ const citySchema = new Schema({
   notes: { type: String, required: true },
   position: { type: positionSchema, required: true },
 });
-const citiesSchema = {
-  cities: { type: [citySchema], required: true },
-};
 
 const cities = mongoose.model('cities', citiesSchema);
 
